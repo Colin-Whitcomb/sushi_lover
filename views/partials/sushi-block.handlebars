@@ -1,11 +1,18 @@
 <li>
+
+  
 	{{orders}}
-          <p>{{sushi_name}}</p>
+    
+    <div>
+      <div>
+        <p class="center-align" style="display:inline-block;">{{sushi_name}}</p> 
+     </div>
 
-    <button class="devour" data-id="{{this.id}}" data-dev="{{this.devoured}}">
-       {{#unless devoured}} Devour it! {{else}} All done. (delete) {{/unless}} 
-	</button>
-
+        <button class="devour center-align" data-id="{{this.id}}" data-dev="{{this.devoured}}">
+            {{#unless devoured}} Devour it! {{else}} All done. (delete) {{/unless}} 
+	    </button>
+   </div>
+ 
 	{{!-- <button class="delete-order" data-id="{{this.id}}">
         Delete order!
     </button> --}}

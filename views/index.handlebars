@@ -1,40 +1,65 @@
-<img src="https://media.giphy.com/media/tN1YiOeZmIRKE/giphy.gif" alt="Picture of Sushi Roll"> 
 
-<h1 class="title">Sushi Lover!</h1>
+<div class="row">
+  <div class="col xs12 s9 offset-s2 offset-m3 offset-l4">
+    <img class="responsive-img" src="https://media.giphy.com/media/tN1YiOeZmIRKE/giphy.gif" alt="Picture of Sushi Roll"> 
+  </div>
+  
+  <div class="col s9 offset-s2 offset-m3 offset-l4">
+    <h1 class="title">Sushi Lover!</h1>
+  </div>
+</div>
 
-<h2> Sushi to eat!</h2>
-<ul>
-  {{#each orders}}
-    {{#unless devoured}}
-      {{> sushi-block devoured=0}}
-    {{/unless}}
-  {{/each}}
-</ul>
+<div class="row">
+  <div class="col s6">
+    <h4> Sushi to eat!</h4>
+      <ul>
+        {{#each orders}}
+          {{#unless devoured}}
+            {{> sushi-block devoured=0}}
+          {{/unless}}
+        {{/each}}
+      </ul>
+  </div>
 
 {{!-- <h2> Devoured Sushi - Yum!</h2> --}}
+ <div class="col s6">
+    <h4>Devoured List</h4>
+      <ul>
+        {{#each orders}}
+          {{#if devoured}}
+            {{> sushi-block devoured=1}}
+          {{/if}}
+        {{/each}}
+      </ul>
+    </div>
+</div>
 
-<ul>
-  {{#each orders}}
-    {{#if devoured}}
-      {{> sushi-block devoured=1}}
-    {{/if}}
-  {{/each}}
-</ul>
-
-<form class="create-form">
-
-  <div class="form-group">
-    <label for="ca"></label>
-    <input type="text" id="soosh" name="name">
+<div class="row">
+  <div class="col s6 offset-s2">
+    <p class="center-align">Enter a sushi order you want to eat!</p>
   </div>
+</div>
 
-<div class="form-group">
-  <button type="submit" id="submit_btn">submit</button>
+
+<div class="row">
+  <div class="col s6 offset-s2">
+    <form class="create-form">
+ {{!-- <p>Enter a sushi order you want to eat!</p> --}}
+      <div class="form-group">
+        <label for="ca"></label>
+          <input type="text" id="soosh" name="name">
+      </div>
+
+      <div class="col s6 offset-s4">
+        <button type="submit" id="submit_btn">submit</button>
+      </div>
   </div>
+</div>
 
-<div class="form-group">
+
+{{!-- <div class="form-group">
   <p>Enter a sushi order you want to eat!</p>
-  </div>
+  </div> --}}
 </form>
 
 
