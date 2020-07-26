@@ -10,8 +10,8 @@
 </div>
 
 <div class="row">
-  <div class="col s6">
-    <h4> Sushi to eat!</h4>
+  <div class="col s7 m5 l4 offset-s4 offset-m2 offset-l2">
+    <h5> Sushi to eat!</h4>
       <ul>
         {{#each orders}}
           {{#unless devoured}}
@@ -22,8 +22,8 @@
   </div>
 
 {{!-- <h2> Devoured Sushi - Yum!</h2> --}}
- <div class="col s6">
-    <h4>Devoured List</h4>
+ <div class="col s7 m5 l4 offset-s4 offset-l2">
+    <h5>Devoured List</h4>
       <ul>
         {{#each orders}}
           {{#if devoured}}
@@ -32,17 +32,16 @@
         {{/each}}
       </ul>
     </div>
-</div>
 
 <div class="row">
-  <div class="col s6 offset-s2">
-    <p class="center-align">Enter a sushi order you want to eat!</p>
+  <div class="col s6 offset-s3 offset-m3 offset-l3">
+    <h5 class="center-align">Enter a sushi order you want to eat!</p>
   </div>
 </div>
 
 
 <div class="row">
-  <div class="col s6 offset-s2">
+  <div class="col s6 offset-s2 offset-m3 offset-l3">
     <form class="create-form">
  {{!-- <p>Enter a sushi order you want to eat!</p> --}}
       <div class="form-group">
@@ -50,8 +49,8 @@
           <input type="text" id="soosh" name="name">
       </div>
 
-      <div class="col s6 offset-s4">
-        <button type="submit" id="submit_btn">submit</button>
+      <div class="col s6 offset-s4 offset-l5">
+        <button type="submit" id="submit_btn">Submit</button>
       </div>
   </div>
 </div>
