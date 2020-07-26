@@ -3,11 +3,11 @@
           <p>{{sushi_name}}</p>
 
     <button class="devour" data-id="{{this.id}}">
-        Devour it!
+       {{#unless devoured}} Devour it! {{else}} All done. (delete) {{/unless}} 
 	</button>
 
-	<button class="delete-order" data-id="{{this.id}}">
+	{{!-- <button class="delete-order" data-id="{{this.id}}">
         Delete order!
-    </button>
+    </button> --}}
     
 </li>

@@ -10,8 +10,9 @@ var sushi = {
 
   // The variables cols and vals are arrays.
   create: function (name, cb) {
+    console.log("model name: " + name)
     // "sushi_name" "devoured"   
-    orm.create("sushi", ["sushi_name", "devoured"], [name, 0], function (res) {
+    orm.create("sushi", ["sushi_name", " devoured"], [name, 0], function (res) {
       cb(res);
     });
   },
