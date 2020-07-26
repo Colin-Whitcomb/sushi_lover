@@ -16,9 +16,9 @@
 <h2> Devoured Sushi - Yum!</h2>
 
 <ul>
-  {{#each sushi}}
+  {{#each orders}}
     {{#if devoured}}
-      {{> orders/sushi-block devoured=1}}
+      {{> sushi-block devoured=1}}
     {{/if}}
   {{/each}}
 </ul>
