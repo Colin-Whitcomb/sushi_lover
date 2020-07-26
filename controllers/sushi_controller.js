@@ -12,9 +12,9 @@ router.get("/", function (req, res) {
     sushi.all(function (data) {
         var hbsObject = {
             sushi_order: data
-        }; 
+        };
         // put this on the page (hbsObject);
-        // console.log(hbsObject);
+        console.log(hbsObject);
         res.render("index", hbsObject);
     });
 });
@@ -24,16 +24,35 @@ router.get("/", function (req, res) {
 router.post("/api/sushi", function (req, res) {
     // req.body.sushi_name = what user wrote in text area.
     console.log("Post was sent: " + req.body.sushi_name);
-    sushi.create([req.body.sushi_name], 
+    sushi.create([req.body.sushi_name],
 
 
-    function (result) {
-        // Send back the ID of the new quote
-        res.json({
-            id: result.insertId
+        function (result) {
+            // Send back the ID of the new quote
+            res.json({
+                id: result.insertId
+            });
         });
+});
+
+router.put("/api/cats/:id", function (req, res) {
+    var id = req.params.id;
+
+    console.log("id: ", id);
+
+    cat.update({
+        id,
+        function (result) {
+            if (result.changedRows == 0) {
+                // If no rows were changed, then the ID must not exist, so 404
+                return res.status(404).end();
+            } else {
+                res.status(200).end();
+            }
+        }
     });
 });
+
 
 
 

@@ -10,7 +10,7 @@ $(document).ready(function () {
         var newSushi = {
             sushi_name: $("#soosh").val().trim(),
         };
-        
+
         // Send the POST request.
         $.ajax("/api/sushi", {
             type: "POST",
@@ -23,5 +23,26 @@ $(document).ready(function () {
             }
         );
     });
+
+    $("#devour").on("click", function(event) {
+        var id = $(this).data("id");
+        // var newSleep = $(this).data("newsleep");
+    
+        // var newSleepState = {
+        //   sleepy: newSleep
+        // };
+    
+        // Send the PUT request.
+        $.ajax("/api/sushi/" + id, {
+          type: "PUT",
+        //   data: newSleepState
+        }).then(
+          function() {
+            console.log("changed devour to 1");
+            // Reload the page to get the updated list
+            location.reload();
+          }
+        );
+      });
 
 });
