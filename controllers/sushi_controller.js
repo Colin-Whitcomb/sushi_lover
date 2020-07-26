@@ -22,7 +22,8 @@ router.get("/", function (req, res) {
 // Listens for submit button to be clicked
 // Creates new sushi order
 router.post("/api/sushi", function (req, res) {
-    console.log("Post was sent:" + req.body.sushi_name);
+    // req.body.sushi_name = what user wrote in text area.
+    console.log("Post was sent: " + req.body.sushi_name);
     sushi.create([req.body.sushi_name], 
 
 
