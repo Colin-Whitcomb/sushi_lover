@@ -16,7 +16,7 @@ var orm = {
     create: function(table, cols, vals, cb) {
         // INSERT INTO table (cols) VALUES (val);
         var queryString = "INSERT INTO " + table + " (" + cols.toString() + ") " + "VALUES (" + printQuestionMarks(vals.length) + ") ";
-    
+        
         console.log(queryString);
         connection.query(queryString, vals, function(err, result) {
           if (err) {
@@ -29,5 +29,5 @@ var orm = {
 }
 
 
-// Export the orm object for the model (cat.js).
+// Export the orm object for the model
 module.exports = orm;

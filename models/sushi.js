@@ -9,9 +9,9 @@ var sushi = {
     },
 
     // The variables cols and vals are arrays.
-  create: function(cols, vals, cb) {
+  create: function(name, cb) {
                 // "sushi_name" "devoured"   
-    orm.create("sushi", cols, vals, function(res) {
+    orm.create("sushi", ["sushi_name", "devoured"],[name, 0], function(res) {
       cb(res);
     });
   },
