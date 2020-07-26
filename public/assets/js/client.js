@@ -24,7 +24,8 @@ $(document).ready(function () {
         );
     });
 
-    $("#devour").on("click", function(event) {
+    $(".devour").on("click", function(event) {
+        console.log("devour clicked");
         var id = $(this).data("id");
         // var newSleep = $(this).data("newsleep");
     
@@ -34,6 +35,7 @@ $(document).ready(function () {
     
         // Send the PUT request.
         $.ajax("/api/sushi/" + id, {
+            
           type: "PUT",
         //   data: newSleepState
         }).then(

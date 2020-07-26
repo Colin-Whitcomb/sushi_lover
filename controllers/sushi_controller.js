@@ -35,14 +35,13 @@ router.post("/api/sushi", function (req, res) {
         });
 });
 
-router.put("/api/cats/:id", function (req, res) {
+router.put("/api/sushi/:id", function (req, res) {
+    console.log("PUT was called");
     var id = req.params.id;
 
     console.log("id: ", id);
 
-    cat.update({
-        id,
-        function (result) {
+    sushi.update(id, function (result) {
             if (result.changedRows == 0) {
                 // If no rows were changed, then the ID must not exist, so 404
                 return res.status(404).end();
@@ -50,7 +49,7 @@ router.put("/api/cats/:id", function (req, res) {
                 res.status(200).end();
             }
         }
-    });
+    );
 });
 
 

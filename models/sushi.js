@@ -18,6 +18,7 @@ var sushi = {
 
   update: function (id, cb) {
     // send ORM table name and id of obj
+    console.log("model id: " + id);
     orm.update("sushi", id, function (res) {
       cb(res);
     });
