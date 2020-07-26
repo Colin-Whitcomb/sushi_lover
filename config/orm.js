@@ -52,6 +52,18 @@ var orm = {
     });
   },
 
+  delete: function(table, id, cb) {
+    var queryString = "DELETE FROM " + table + " WHERE sushi.id = " + id;
+
+    connection.query(queryString, function(err, result) {
+      if (err) {
+        throw err;
+      }
+
+      cb(result);
+    });
+  }
+
 
 }
 

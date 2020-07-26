@@ -23,8 +23,13 @@ var sushi = {
       cb(res);
     });
   },
-}
 
+  delete: function(id, cb) {
+    orm.delete("sushi", id, function(res) {
+      cb(res);
+    });
+  }
+}
 
 
 
