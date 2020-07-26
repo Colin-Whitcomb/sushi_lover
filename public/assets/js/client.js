@@ -10,7 +10,7 @@ $(document).ready(function () {
         var newSushi = {
             sushi_name: $("#soosh").val().trim(),
         };
-        alert("newSushi: " + newSushi);
+        
         // Send the POST request.
         $.ajax("/api/sushi", {
             type: "POST",
@@ -19,7 +19,7 @@ $(document).ready(function () {
             function () {
                 console.log("created new sushi order");
                 // Reload the page to get the updated list
-                $("#soosh").empty();
+                $("#soosh").val('');
             }
         );
     });

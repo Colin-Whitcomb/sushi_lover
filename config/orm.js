@@ -11,30 +11,47 @@ function printQuestionMarks(num) {
 }
 
 var orm = {
-    // selects all data from the sushi table in sushi_db
-    all: function (tableInput, cb) {
-        var queryString = "SELECT * FROM " + tableInput + ";";
-        connection.query(queryString, function (err, result) {
-            if (err) {
-                throw err;
-            }
-            cb(result);
-        });
-    },
+  // selects all data from the sushi table in sushi_db
+  all: function (tableInput, cb) {
+    var queryString = "SELECT * FROM " + tableInput + ";";
+    connection.query(queryString, function (err, result) {
+      if (err) {
+        throw err;
+      }
+      cb(result);
+    });
+  },
 
-    create: function(table, cols, vals, cb) {
-        // INSERT INTO table (cols) VALUES (val);
-        var queryString = "INSERT INTO " + table + " (" + cols.toString() + ") " + "VALUES (" + printQuestionMarks(vals.length) + ") ";
+  create: function (table, cols, vals, cb) {
+    // INSERT INTO table (cols) VALUES (val);
+    var queryString = "INSERT INTO " + table + " (" + cols.toString() + ") " + "VALUES (" + printQuestionMarks(vals.length) + ") ";
 
-        console.log(queryString);
-        connection.query(queryString, vals, function(err, result) {
-          if (err) {
-            throw err;
-          }
-    
-          cb(result);
-        });
-      },
+    console.log(queryString);
+    connection.query(queryString, vals, function (err, result) {
+      if (err) {
+        throw err;
+      }
+
+      cb(result);
+    });
+  },
+
+  // An example of objColVals would be {name: panther, sleepy: true}
+  update: function (table, id, cb) {
+    // UPDATE sushi SET devoured = 1 WHERE sushi.id=1;
+    var queryString = "UPDATE " + table + "SET devoured = 1 WHERE sushi.id = " + id ;
+
+    console.log(queryString);
+    connection.query(queryString, function (err, result) {
+      if (err) {
+        throw err;
+      }
+
+      cb(result);
+    });
+  },
+
+
 }
 
 
