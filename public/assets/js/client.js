@@ -28,15 +28,19 @@ $(document).ready(function () {
     $(".devour").on("click", function (event) {
         console.log("devour clicked");
         var id = $(this).data("id");
+        var dev = $(this).data("dev");
+        console.log(dev === 0);
 
-        if (id === 0) {
+        if (dev === 0) {
             callPut();
-        } else if (id === 1) {
+        } else if (dev === 1) {
             callDelete();
         };
 
         function callPut () {
+            console.log("PUT was called")
             // Send the PUT request.
+    
             $.ajax("/api/sushi/" + id, {
 
                 type: "PUT",

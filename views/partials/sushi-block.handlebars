@@ -2,7 +2,7 @@
 	{{orders}}
           <p>{{sushi_name}}</p>
 
-    <button class="devour" data-id="{{this.id}}">
+    <button class="devour" data-id="{{this.id}}" data-dev="{{this.devoured}}">
        {{#unless devoured}} Devour it! {{else}} All done. (delete) {{/unless}} 
 	</button>
 
