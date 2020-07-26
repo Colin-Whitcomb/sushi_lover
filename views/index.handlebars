@@ -4,11 +4,13 @@
 
 <h2> Sushi to eat!</h2>
 <ul>
-  {{#each sushi}}
-    {{#unless devoured}}
-      {{> sushi/sushi-block devoured=0}}
-    {{/unless}}
+<ul>
+  {{#each orders}}
+    <li>
+      <p>{{sushi_name}}</p>
+    </li>
   {{/each}}
+</ul>
 </ul>
 
 <h2> Devoured Sushi - Yum!</h2>
@@ -16,7 +18,7 @@
 <ul>
   {{#each sushi}}
     {{#if devoured}}
-      {{> sushi/sushi-block devoured=1}}
+      {{> orders/sushi-block devoured=1}}
     {{/if}}
   {{/each}}
 </ul>

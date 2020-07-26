@@ -11,7 +11,7 @@ var sushi = require("../models/sushi.js");
 router.get("/", function (req, res) {
     sushi.all(function (data) {
         var hbsObject = {
-            sushi_order: data
+            orders: data
         };
         // put this on the page (hbsObject);
         console.log(hbsObject);
