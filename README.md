@@ -40,7 +40,7 @@ Same class / different API call based on conditional:
 <p align="center">
     <img src="images/ss1.png" width="270" />
 </p>
-______________
+
 
 ## Take_Aways
 MVC works really well to compartmentalize file structures. However, it requires a strong understanding of many moving parts that can take some time to fully understand.
