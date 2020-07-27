@@ -1,7 +1,16 @@
 body {
     background-color: rgba(247, 244, 161, 0.934);
+    font-family: 'Fira Sans Condensed', sans-serif;
 }
 
 .title {
     color: rgb(213, 102, 196);
+}
+
+.devour{
+    background-color: rgb(235, 158, 224);
+}
+
+#submit_btn {
+    background-color: rgb(235, 158, 224);
 }

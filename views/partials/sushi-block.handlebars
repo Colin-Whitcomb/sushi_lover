@@ -5,11 +5,11 @@
     
     <div>
       <div>
-        <h6 class="center-align" style="display:inline-block;">{{sushi_name}}</p> 
+        <h5 class="center-align" style="display:inline-block;">{{sushi_name}}</p> 
      </div>
 
-        <button class="devour center-align" data-id="{{this.id}}" data-dev="{{this.devoured}}">
-            {{#unless devoured}} Devour it! {{else}} All done. (delete) {{/unless}} 
+        <button class="devour center-align btn waves-effect waves-light" data-id="{{this.id}}" data-dev="{{this.devoured}}">
+            {{#unless devoured}} Devour it! {{else}} All done - delete {{/unless}} 
 	    </button>
    </div>
  
