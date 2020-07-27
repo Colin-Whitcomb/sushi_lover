@@ -52,8 +52,9 @@ $(document).ready(function () {
                     location.reload();
                 }
             );
-        } // Send the DELETE request.
-
+        } 
+        
+        // Send the DELETE request.
         function callDelete() {
             $.ajax("/api/sushi/" + id, {
                 type: "DELETE"
